@@ -757,17 +757,12 @@ Use three sentences maximum and keep the answer as concise as possible.
 
 def ex11_and_ex12():
 	st.subheader("Exercise 11 & 12: Create RAG Chatbot and Vector Stores")
-	st.write("Now, we will create a vector store to store the user's document(s).")
+	st.write("Now, using what you have learn from previous exercises, you will now create a RAG Chatbot that stores data in a vector store.")
 	st.write("This process uses OpenAI to generate embeddings and vector store (**LanceDB**/**Pinecone**) for storing text embeddings.")
 	st.write("For experimentation, we will focus on TXT and/or PDF file(s) ONLY.")
 	st.write("Soon you will notice the :red[**drawback of LanceDB**] is that it doesn't integrate with LangChain well and users have to recreate vector store everytime after application is restarted or session is refreshed. Whereas :green[**Pinecone**] is able to load existing indexes from vector store without a need to recreate.")
 	st.markdown("""
 
-	For both exercises, we will:
-	- Call the function **prompt_inputs_forms()** created in Exercise 7 to display the form in case user want to set a new prompt template
-	- Set the number of previous messages to remember in :green[**ConversationBufferwindowMemory(K=n)**] and store the memory in :green[**st.session_state.memory**]. Note that there is a new import statement :blue[**from *langchain.memory* import ConversationBufferWindowMemory**].
-	- Integrate the memory with the session state prompt template :green[**st.session_state.prompt_template**]
-	- Save the conversation in the memory using :green[**save_context({"input": "user input msg"}, {"output": "model respond message"})**]
 	""" 
 	)
 	
